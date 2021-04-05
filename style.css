@@ -320,6 +320,7 @@ img
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: absolute;
     align-items: center;
     transform: translateY(-100%);
     transition: all 1.5s linear;
