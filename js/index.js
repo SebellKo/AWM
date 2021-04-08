@@ -36,6 +36,24 @@ workBtn.addEventListener("click", workPageShow);
 peopleBtn.addEventListener("click", peoplePageShow);
 goodsBtn.addEventListener("click", goodsPageShow);
 
+
+
+/*mobile_css*/
+
+const deskTopLogoMean = document.querySelector(".logo_mean");
+const mobileLogoMean = document.querySelector(".logo_mean_mobile");
+
+if (window.innerWidth < 500)
+{
+    deskTopLogoMean.style.display = "none";
+    mobileLogoMean.style.display = "flex";
+}
+else if (window.innerWidth > 700)
+{
+    deskTopLogoMean.style.display = "flex";
+    mobileLogoMean.style.display = "none";
+}
+
 function init()
 {
 

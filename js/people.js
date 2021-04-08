@@ -3,17 +3,23 @@ const people_mainPage = document.querySelector(".main_page");
 
 const people_peopleBtn = document.querySelector(".people");
 const introPeopleBox = document.querySelector(".intro_people_box");
-const forRotateBox = document.querySelector(".for_rotate");
+const peopleBack = document.querySelector(".people_back");
+const introPeopleBoxDiv = document.querySelectorAll(".intro_people_box div");
 
-forRotateBox.addEventListener("mousemove", function(event)
+
+introPeopleBoxDiv.forEach(function(elem)
 {
-    
-    x = event.offsetX - 35;
-    y = event.offsetY - 35;
-    console.log(x);
-    console.log(y);
-    introPeopleBox.style.transform = "rotateX("+ -y +"deg) rotateY("+ x +"deg)";
-});
+    elem.addEventListener("mouseenter", function()
+    {
+        peopleBack.style.transform = "translateZ(-5vw) rotateX(180deg) rotateY(0deg)"
+    });
+    elem.addEventListener("mouseout", function()
+    {
+        peopleBack.style.transform = "translateZ(-5vw) rotateX(0deg) rotateY(180deg)"
+    });
+})
+
+
 
 function clickPeopleBtn()
 {
