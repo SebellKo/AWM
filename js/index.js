@@ -7,6 +7,7 @@ const workPage = document.querySelector(".work_page");
 const goodsPage = document.querySelector(".goods_page");
 const peoplePage = document.querySelector(".people_page");
 
+
 function hideIndexPage()
 {
     indexPage.classList.add("index_hide");
@@ -14,45 +15,54 @@ function hideIndexPage()
 
 setTimeout(hideIndexPage, 6000);
 
-function workPageShow()
+
+if (matchMedia("screen and (max-width: 400px)").matches)
 {
-    workPage.style.transform = "translateY(0%)";
-    mainPage.style.transform = "translateY(100%)";
+    function workPageShow()
+    {
+        workPage.style.transform = "translateX(0%)";
+        mainPage.style.transform = "translateX(-100%)";
+    }
+    
+    function peoplePageShow()
+    {
+        peoplePage.style.transform = "translateX(0%)";
+        mainPage.style.transform = "translateX(-100%)";
+    }
+    
+    function goodsPageShow()
+    {
+        goodsPage.style.transform = "translateX(0%)";
+        mainPage.style.transform = "translateX(-100%)";
+    } 
 }
 
-function peoplePageShow()
+else if(matchMedia("screen and (min-width: 1000px)").matches)
 {
-    peoplePage.style.transform = "translateY(0%)";
-    mainPage.style.transform = "translateY(100%)";
+    function workPageShow()
+    {
+        workPage.style.transform = "translateY(0%)";
+        mainPage.style.transform = "translateY(100%)";
+    }
+
+    function peoplePageShow()
+    {
+        peoplePage.style.transform = "translateY(0%)";
+        mainPage.style.transform = "translateY(100%)";
+    }
+
+    function goodsPageShow()
+    {
+        goodsPage.style.transform = "translateY(0%)";
+        mainPage.style.transform = "translateY(100%)";
+    }
 }
 
-function goodsPageShow()
-{
-    goodsPage.style.transform = "translateY(0%)";
-    mainPage.style.transform = "translateY(100%)";
-}
 
 workBtn.addEventListener("click", workPageShow);
 peopleBtn.addEventListener("click", peoplePageShow);
 goodsBtn.addEventListener("click", goodsPageShow);
 
-
-
-/*mobile_css*/
-
-const deskTopLogoMean = document.querySelector(".logo_mean");
-const mobileLogoMean = document.querySelector(".logo_mean_mobile");
-
-if (window.innerWidth < 500)
-{
-    deskTopLogoMean.style.display = "none";
-    mobileLogoMean.style.display = "flex";
-}
-else if (window.innerWidth > 700)
-{
-    deskTopLogoMean.style.display = "flex";
-    mobileLogoMean.style.display = "none";
-}
 
 function init()
 {

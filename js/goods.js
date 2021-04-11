@@ -15,11 +15,24 @@ introgoodsBox.forEach(elem =>
         });
 });
 
-function clickgoodsBtn()
+if (matchMedia("screen and (max-width: 400px)").matches)
 {
-    goods_goodsPage.style.transform = "translateY(-100%)";
-    goods_mainPage.style.transform = "translateY(0%)";
+    function clickgoodsBtn()
+    {
+        goods_goodsPage.style.transform = "translateX(100%)";
+        goods_mainPage.style.transform = "translateX(0%)";
+    }
 }
+
+else if(matchMedia("screen and (min-width: 1000px)").matches)
+{
+    function clickgoodsBtn()
+    {
+        goods_goodsPage.style.transform = "translateY(-100%)";
+        goods_mainPage.style.transform = "translateY(0%)";
+    }
+}
+
 
 goods_goodsBtn.addEventListener("click", clickgoodsBtn);
 

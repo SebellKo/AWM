@@ -53,25 +53,53 @@ function _checkPosition()
     }
 }
 
-function clickTeamBtn()
+
+if (matchMedia("screen and (max-width: 400px)").matches)
 {
-    teamPage.style.transform = "translateX(0%)";
-    personalPage.style.transform = "translateX(100%)";
+    function clickTeamBtn()
+    {
+        teamPage.style.transform = "translateY(0%)";
+        personalPage.style.transform = "translateY(100%)";
+    }
+
+    function clickPersonalBtn()
+    {
+        teamPage.style.transform = "translateY(100%)";
+        personalPage.style.transform = "translateY(0%)";
+    }
+
+    function clickWorkBtn()
+    {
+        work_workPage.style.transform = "translateX(100%)";
+        work_mainPage.style.transform = "translateX(-0%)";
+        teamPage.style.transform = "translateY(100%)";
+        personalPage.style.transform = "translateY(100%)";
+    }
 }
 
-function clickPersonalBtn()
+else if(matchMedia("screen and (min-width: 1000px)").matches)
 {
-    teamPage.style.transform = "translateX(100%)";
-    personalPage.style.transform = "translateX(0%)";
+    function clickTeamBtn()
+    {
+        teamPage.style.transform = "translateX(0%)";
+        personalPage.style.transform = "translateX(100%)";
+    }
+
+    function clickPersonalBtn()
+    {
+        teamPage.style.transform = "translateX(100%)";
+        personalPage.style.transform = "translateX(0%)";
+    }
+
+    function clickWorkBtn()
+    {
+        work_workPage.style.transform = "translateY(-100%)";
+        work_mainPage.style.transform = "translateY(0%)";
+        teamPage.style.transform = "translateX(100%)";
+        personalPage.style.transform = "translateX(100%)";
+    }
 }
 
-function clickWorkBtn()
-{
-    work_workPage.style.transform = "translateY(-100%)";
-    work_mainPage.style.transform = "translateY(0%)";
-    teamPage.style.transform = "translateX(100%)";
-    personalPage.style.transform = "translateX(100%)";
-}
 
 work_workBtn.addEventListener("click", clickWorkBtn);
 teamBtn.addEventListener("click", clickTeamBtn);
